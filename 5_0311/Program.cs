@@ -15,6 +15,47 @@ namespace _5_0311
 
             //TreiNPlus1();
 
+            Coins();
+        }
+
+        private static void Coins()
+        {
+            int stake;
+            int goal;
+            int wins = 0, losses = 0;
+
+            Random rnd = new Random();
+            int times = 10000;
+
+            for (int i = 0; i < times; i++)
+            {
+                stake = 70;
+                goal = 100;
+                while ( !(stake == 0 || stake == goal) )
+                {
+                    if (rnd.Next(2) == 0)
+                    {
+                        stake++;
+                    }
+                    else
+                    {
+                        stake--;
+                    }
+                }
+                if (stake == 0)
+                {
+                    losses++;
+                }
+                else
+                {
+                    wins++;
+                }
+            }
+
+
+            Console.WriteLine($"Wins: {wins}, Losses: {losses}");
+
+
         }
 
         private static void TreiNPlus1()
