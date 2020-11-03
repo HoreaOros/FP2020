@@ -23,26 +23,77 @@ namespace _5_0311
             //Stars2();
 
             Stars3();
+            Stars4();
 
 
             
 
         }
-
         // TODO
         /// <summary>
         /// pt n = 4 se va afisa:
-        /// ********
-        /// ***  ***
-        /// **    **
         /// *      *
         /// **    **
         /// ***  ***
         /// ********
-        /// </summary>
-        private static void Stars3()
+        /// <summary>
+
+        private static void Stars4()
         {
-            
+            int n = 4;
+            int space = 2 * n - 2;
+
+            for (int i = 1; i <= n; i++)
+            {
+
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                for (int j = (2 * i - 2); j < space; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.Write("\n");
+            }
+            Console.WriteLine();
+        }
+
+            // TODO
+            /// <summary>
+            /// pt n = 4 se va afisa:
+            /// ********
+            /// ***  ***
+            /// **    **
+            /// *      *
+            /// </summary>
+            private static void Stars3()
+        {
+            int n = 4;
+            int space = 0;
+
+            for (int i = n; i >= 1; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                for (int j = 0; j < space; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.Write("\n");
+                space += 2;
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
