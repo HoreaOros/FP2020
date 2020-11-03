@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace _4_2710
 {
-    class Palindrome
+    public class Palindrome
     {
         static void Main(string[] args)
         {
             int n;
-
-
 
             n = Util.GetIntFromConsole();
 
@@ -25,9 +23,6 @@ namespace _4_2710
             {
                 Console.WriteLine("Numarul nu este palindrom");
             }
-            
-
-            
         }
 
         /// <summary>
@@ -36,7 +31,7 @@ namespace _4_2710
         /// <param name="n">Numarul care este verificat</param>
         /// <returns>true daca numarul este palindrom, false in caz contrar</returns>
         /// <example>palindrom => 121, 123321, nu este palindrom 1233 </example>
-        private static bool Palindrom(int n)
+        public static bool Palindrom(int n)
         {
             if (n == Reverse(n))
                 return true;
