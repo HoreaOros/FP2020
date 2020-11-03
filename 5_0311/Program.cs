@@ -128,6 +128,8 @@ namespace _5_0311
 
 
             Console.WriteLine($"Wins: {wins}, Losses: {losses}");
+            Console.WriteLine("Wins: {0}, Losses: {1}", wins, losses);
+            //Console.WriteLine("Wins:" + wins + ", Losses: " + losses);
 
 
         }
