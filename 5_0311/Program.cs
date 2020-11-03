@@ -15,7 +15,81 @@ namespace _5_0311
 
             //TreiNPlus1();
 
-            Coins();
+            // Coins();
+
+
+
+            //Stars1();
+            //Stars2();
+
+            Stars3();
+
+
+            
+
+        }
+
+        // TODO
+        /// <summary>
+        /// pt n = 4 se va afisa:
+        /// ********
+        /// ***  ***
+        /// **    **
+        /// *      *
+        /// **    **
+        /// ***  ***
+        /// ********
+        /// </summary>
+        private static void Stars3()
+        {
+            
+        }
+
+        /// <summary>
+        /// ****
+        /// ***
+        /// **
+        /// *
+        /// </summary>
+        private static void Stars2()
+        {
+            int n = 20;
+            // afisez n linii
+            for (int i = n; i >= 1; i--)
+            {
+                // afisez o linie cu i stelute
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                // trec la linia urmatoare
+                Console.WriteLine();
+            }
+        }
+
+        /// <summary>
+        /// *
+        /// **
+        /// ***
+        /// ****
+        /// *****
+        /// </summary>
+        private static void Stars1()
+        {
+            int n = 20;
+            // afisez n linii
+            for (int i = 1; i <= n; i++)
+            {
+                // afisez o linie cu i stelute
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                // trec la linia urmatoare
+                Console.WriteLine();
+            }
         }
 
         private static void Coins()
