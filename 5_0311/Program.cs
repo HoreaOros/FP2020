@@ -72,27 +72,27 @@ namespace _5_0311
             /// *      *
             /// </summary>
             private static void Stars3()
-        {
-            int n = 4;
-            int space = 0;
-
-            for (int i = n; i >= 1; i--)
             {
-                for (int j = 0; j < i; j++)
+                int n = 4;
+                int space = 0;
+
+                for (int i = n; i >= 1; i--)
                 {
-                    Console.Write("*");
+                    for (int j = 0; j < i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    for (int j = 0; j < space; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int j = 0; j < i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.Write("\n");
+                    space += 2;
                 }
-                for (int j = 0; j < space; j++)
-                {
-                    Console.Write(" ");
-                }
-                for (int j = 0; j < i; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.Write("\n");
-                space += 2;
-            }
             Console.WriteLine();
         }
 
