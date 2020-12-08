@@ -70,6 +70,7 @@ namespace _8_2311
 
         private static void PrintArray(int[] arr)
         {
+            // iteratia read-only peste elementele v
             foreach (int item in arr)
             {
                 Console.Write($"{item} ");
