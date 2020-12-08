@@ -44,7 +44,6 @@ namespace _10_812
             // Se cere sa se determine cea mai mare valoarea k (k <= n) cu proprietatea ca in vectorul arr
             // sunt cel putin k elemente mai mari sau egale decat k. 
             // Precizare: creati un algoritm eficient pentru rezolvarea acestei probleme. (algoritm liniar) 
-            // 
         }
 
         /// <summary>
