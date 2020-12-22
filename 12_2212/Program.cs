@@ -46,13 +46,13 @@ namespace _12_2212
             Console.WriteLine($"Suma elementelor de deasupra diagonalei principale: {SumaDDP(p)}");
 
             // TODO
-            //Console.WriteLine($"Suma elementelor de sub diagonala principala: {SumaSDP(p)}");
+            Console.WriteLine($"Suma elementelor de sub diagonala principala: {SumaSDP(p)}");
 
             // TODO
-            //Console.WriteLine($"Suma elementelor de deasupra diagonalei secundare: {SumaDDS(p)}");
+            Console.WriteLine($"Suma elementelor de deasupra diagonalei secundare: {SumaDDS(p)}");
 
             // TODO
-            //Console.WriteLine($"Suma elementelor de sub diagonala secundara: {SumaSDS(p)}");
+            Console.WriteLine($"Suma elementelor de sub diagonala secundara: {SumaSDS(p)}");
 
 
             // TODO
@@ -78,6 +78,39 @@ namespace _12_2212
             //   1 1 1 1 1 1
             // rezultatul este 3 si incepe in linia 2, coloana 0
             // Hint: Maximum size square sub-matrix with all 1s
+        }
+
+        private static object SumaSDS(int[,] p)
+        {
+            int n = p.GetLength(0);
+            int suma = 0;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    if (j > n - 1 - i)
+                        suma += p[i, j];
+            return suma;
+        }
+
+        private static object SumaDDS(int[,] p)
+        {
+            int n = p.GetLength(0);
+            int suma = 0;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    if (j < n - 1 - i)
+                        suma += p[i, j];
+            return suma;
+        }
+
+        private static object SumaSDP(int[,] p)
+        {
+            int n = p.GetLength(0);
+            int suma = 0;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    if (i > j)
+                        suma += p[i, j];
+            return suma;
         }
 
 
