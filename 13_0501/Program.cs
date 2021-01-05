@@ -147,9 +147,25 @@ namespace _13_0501
 
             // TODO
             // rank
+            int rank = MyBinarySearchLeftmost(v, key);
+            Console.WriteLine($"rank = {rank}");
+
             // succesor
+            int succesor = MyBinarySearchRightmost(v, key) + 1;
+            Console.WriteLine($"succesor = {v[succesor]}");
+
             // predecesor
+            int predecesor = MyBinarySearchLeftmost(v, key) - 1;
+            Console.WriteLine($"predecesor = {v[predecesor]}");
+
             // cel mai apropiat vecin
+            int diferenta = Math.Min(key - v[predecesor], v[succesor] - key);
+            int vecin;
+            if (diferenta == key - v[predecesor])
+                vecin = v[predecesor];
+            else
+                vecin = v[succesor];
+            Console.WriteLine($"Cel mai apropiat vecin este {vecin}");
         }
 
         //          function binary_search_rightmost(A, n, T):
@@ -165,7 +181,21 @@ namespace _13_0501
         private static int MyBinarySearchRightmost(int[] v, int key)
         {
             // TODO
-            return 0;
+
+            int left = 0;
+            int right = v.Length;
+            int mid;
+            while (left < right)
+            {
+                mid = (int)Math.Floor((double)(left + right) / 2);
+                if (v[mid] > key)
+                    right = mid;
+                else
+                    left = mid + 1;
+
+            }
+            return right - 1;
+
         }
 
         //    function binary_search_leftmost(A, n, T):
@@ -181,7 +211,19 @@ namespace _13_0501
         private static int MyBinarySearchLeftmost(int[] v, int key)
         {
             // TODO
-            return 0;
+
+            int left = 0;
+            int right = v.Length;
+            int mid;
+            while (left < right)
+            {
+                mid = (int)Math.Floor((double)(left + right) / 2);
+                if (v[mid] < key)
+                    left = mid + 1;
+                else
+                    right = mid;
+            }
+            return left;
         }
 
 
@@ -200,8 +242,21 @@ namespace _13_0501
         private static int MyBinarySearchAlt(int[] v, int key)
         {
             // TODO
-            
-            return 0;
+
+            int left, right, mid;
+            left = 0;
+            right = v.Length - 1;
+            while (left != right)
+            {
+                mid = (int)Math.Ceiling((double)(left + right) / 2);
+                if (v[mid] > key)
+                    right = mid - 1;
+                else
+                    left = mid;
+                if (v[left] == key)
+                    return left;
+            }
+            return -1;
         }
 
         /// <summary>
