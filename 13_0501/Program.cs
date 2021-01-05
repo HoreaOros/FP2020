@@ -12,7 +12,98 @@ namespace _13_0501
         static void Main(string[] args)
         {
             // BS();
-            
+
+
+            MergeSort();
+        }
+
+        private static void MergeSort()
+        {
+            int[] v = {  8, 9, 20, 1, 4, 4, 10, 16, 6, 6 };
+
+            MyMergeSort(v);
+            PrintArray(v);
+        }
+
+        private static void MyMergeSort(int[] v)
+        {
+            MyMergeSortHelper(v, 0, v.Length - 1);
+        }
+
+        private static void MyMergeSortHelper(int[] v, int p, int r)
+        {
+            int q;
+            if (p < r)
+            {
+                q = (p + r) / 2;
+                MyMergeSortHelper(v, p, q);
+                MyMergeSortHelper(v, q + 1, r);
+                MyMerge(v, p, q, r);
+            }
+        }
+
+        private static void MyMerge(int[] v, int p, int q, int r)
+        {
+            // aloc memorie suplimentara
+            int[] v1 = new int[q - p + 1];
+            int[] v2 = new int[r - q];
+
+            // copiez elementele 
+            int i, j;
+            for (i = p; i <= q; i++)
+            {
+                v1[i - p] = v[i];
+            }
+            for (i = q + 1; i <= r; i++)
+            {
+                v2[i - (q + 1)] = v[i];
+            }
+
+            // interclasare
+            // v = {1, 4, 6, 8, 2, 3, 7, 10 }
+            // v1 = {1, 4, 6, 8}
+            // v2 = {2, 3, 7, 10}
+            // v = {1, 2, 3, 4, 6, 7, 8, 10}
+
+            i = 0; j = 0;
+            int k = 0;
+            while (i < v1.Length && j < v2.Length)
+            {
+                if (v1[i] < v2[j])
+                {
+                    v[p + k] = v1[i];
+                    i++;
+                    k++;
+                }
+                else
+                {
+                    v[p + k] = v2[j];
+                    j++; 
+                    k++;
+                }
+            }
+            while (i < v1.Length)
+            {
+                v[p + k] = v1[i];
+                i++;
+                k++;
+            }
+            while (j < v2.Length)
+            {
+                v[p + k] = v2[j];
+                j++;
+                k++;
+            }
+
+        }
+
+        private static void PrintArray(int[] v)
+        {
+            foreach (var item in v)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
         }
 
         private static void BS()
