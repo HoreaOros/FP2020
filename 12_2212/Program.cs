@@ -60,7 +60,12 @@ namespace _12_2212
             // 1 2 3
             // 4 5 6
             // 7 8 9
-            // ==> 1 2 3 6 9 8 7 4 5 
+            // ==> 1 2 3 6 9 8 7 4 5
+            Console.WriteLine();
+            int[,] mtr = CreateMatrix(3, 3);
+            PrintMatrix(mtr);           
+            Console.Write($"Matricea parcursa in spirala ==> ");
+            Matspiral(mtr, 3, 3);
 
             // TODO
             // Se da o matrice cu m linii si n coloane. Se cere sa se determine toate punctele de maxim.
@@ -78,6 +83,20 @@ namespace _12_2212
             //   1 1 1 1 1 1
             // rezultatul este 3 si incepe in linia 2, coloana 0
             // Hint: Maximum size square sub-matrix with all 1s
+        }
+
+        private static void Matspiral(int[,] mtr, int m, int n)
+        {
+            for (int i = 0; i < n - 1; i++)
+                Console.Write(mtr[0, i] + " ");
+            for (int i = 0; i < m - 1; i++)
+                Console.Write(mtr[i, n - 1] + " ");
+            for (int i = n - 1; i >= 1; i--)
+                Console.Write(mtr[m - 1, i] + " ");
+            for (int i = m - 1; i >= 1; i--)
+                    Console.Write(mtr[i, 0] + " ");
+            for (int i = 1; i < n - 1; i++)
+                Console.Write(mtr[1, i] + " ");           
         }
 
         private static object SumaSDS(int[,] p)
